@@ -7,6 +7,9 @@ function App() {
   const handleScore = (prev) =>{
       setScore(score + prev)
   }
+  const handleWicket = (prev) =>{
+    setWicket(wicket + prev)
+}
   return (
     <div className="App">
       <h3>India:</h3>
@@ -20,7 +23,7 @@ function App() {
           </h1>
         </div>
         <div>
-          Wicket:{" "}
+          Wicket:{wicket}
           <h1 className="wicketCount">
             {
               // show wicket here
@@ -51,7 +54,7 @@ function App() {
       <div className="addWicket">
         Add Wicket
         {/* Increase the count of wicket */}
-        <button>Add 1 wicket</button>
+        <button onClick={() => handleWicket(1)}>Add 1 wicket</button>
       </div>
 
       <div className="addBall">
