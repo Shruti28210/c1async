@@ -4,7 +4,8 @@ function App() {
 
   const [score,setScore] = React.useState(76) ;
   const [wicket,setWicket] = React.useState(2);
-  const [over,setOver] = React.useState(8.2)
+  const [over,setOver] = React.useState(8.2);
+  const [show,setshow] = React.useState("");
 
 
   const handleScore = (prev) =>{
@@ -21,9 +22,18 @@ function App() {
   }
 
 
+  const textshow = ()=>{
+    if(score > 100){
+      setshow(<h3>India:india Won</h3>)
+      
+    }
+    
+  }
+
+
   return (
     <div className="App">
-      <h3>India:</h3>
+      <h3 onChange={() =>{textshow}}>India:</h3>
       <div className="banner">
         <div>
           Score:{score}
@@ -73,6 +83,7 @@ function App() {
         {/* Increase the total number of balls thrown here. */}
         <button onClick={() => handleOver(.1)}>Add 1</button>
       </div>
+    
 
       {/* If score reaches greater than 100, show text "India Won" without quotes in h1 tag with class name 'status' */}
     </div>
