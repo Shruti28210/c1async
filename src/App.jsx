@@ -43,7 +43,7 @@ function App() {
         </div>
 
         <div>
-          Over:{over}
+          Over:{over.toFixed(1)}
           <h1 className="overCount">
             {
               // Show Over here in the format: "over.ball" eg: 4.5 means 4th over and 5th ball
