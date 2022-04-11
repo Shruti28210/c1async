@@ -1,10 +1,17 @@
+import React from 'react'
+
 function App() {
+
+  const [score,setScore] = React.useState(76) 
+  const handleChange = (prev) =>{
+      setScore(score + prev)
+  }
   return (
     <div className="App">
       <h3>India:</h3>
       <div className="banner">
         <div>
-          Score:{" "}
+          Score:{score}
           <h1 className="scoreCount">
             {
               // show "score" here
@@ -35,9 +42,9 @@ function App() {
       <div className="addScore">
         Add Score
         {/* these buttons should add the respective amount in the score */}
-        <button className="addScore1">Add 1</button>
-        <button className="addScore4">Add 4</button>
-        <button className="addScore6">Add 6</button>
+        <button className="addScore1" onClick={() => handleChange(1)}>Add 1</button>
+        <button className="addScore4" onClick={() => handleChange(4)}>Add 4</button>
+        <button className="addScore6" onClick={() => handleChange(6)}>Add 6</button>
       </div>
 
       <div className="addWicket">
