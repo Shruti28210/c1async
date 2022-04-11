@@ -3,13 +3,24 @@ import React from 'react'
 function App() {
 
   const [score,setScore] = React.useState(76) ;
-  const [wicket,setWicket] = React.useState(2)
+  const [wicket,setWicket] = React.useState(2);
+  const [over,setOver] = React.useState(8.2)
+
+
   const handleScore = (prev) =>{
       setScore(score + prev)
   }
+
+
   const handleWicket = (prev) =>{
     setWicket(wicket + prev)
-}
+  }
+
+  const handleOver = (prev) =>{
+    setOver(over + prev)
+  }
+
+
   return (
     <div className="App">
       <h3>India:</h3>
@@ -32,7 +43,7 @@ function App() {
         </div>
 
         <div>
-          Over:{" "}
+          Over:{over}
           <h1 className="overCount">
             {
               // Show Over here in the format: "over.ball" eg: 4.5 means 4th over and 5th ball
@@ -60,7 +71,7 @@ function App() {
       <div className="addBall">
         Add ball
         {/* Increase the total number of balls thrown here. */}
-        <button>Add 1</button>
+        <button onClick={() => handleOver(.1)}>Add 1</button>
       </div>
 
       {/* If score reaches greater than 100, show text "India Won" without quotes in h1 tag with class name 'status' */}
